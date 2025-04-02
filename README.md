@@ -5,15 +5,15 @@ A graticule for maps showing Latitude and Longitude, with automatic adjustment t
 
 Based on [Leaflet.SimpleGraticule](https://github.com/ablakey/Leaflet.SimpleGraticule).
 
-[Demo](https://esm.sh/leaflet-auto-graticule/example.html)\
+[Demo](https://esm.sh/leaflet-auto-graticule-options/example.html)\
 [Demo on FacilMap](https://facilmap.org/#3/0.00/0.00/MSfR-grid)
 
 Usage
 -----
 
-Since release 2.0.0, Leaflet.AutoGraticule is published as an ES module only. Install it using `npm install -S leaflet-auto-graticule` and use it in your code like so:
+Since release 2.0.0, Leaflet.AutoGraticule is published as an ES module only. Install it using `npm install -S leaflet-auto-graticule-options` and use it in your code like so:
 ```javascript
-import AutoGraticule from "leaflet-auto-graticule";
+import AutoGraticule from "leaflet-auto-graticule-options";
 
 new AutoGraticule().addTo(map);
 ```
@@ -27,13 +27,13 @@ If you want to use Leaflet.AutoGraticule directly inside a website without using
 	{
 		"imports": {
 			"leaflet": "https://esm.sh/leaflet",
-			"leaflet-auto-graticule": "https://esm.sh/leaflet-auto-graticule"
+			"leaflet-auto-graticule-options": "https://esm.sh/leaflet-auto-graticule-options"
 		}
 	}
 </script>
 <script type="module">
 	import L from "leaflet";
-	import AutoGraticule from "leaflet-auto-graticule";
+	import AutoGraticule from "leaflet-auto-graticule-options";
 
 	const map = L.map('map', { center: [0, 0], zoom: 5 });
 	L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
