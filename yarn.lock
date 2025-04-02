@@ -1723,9 +1723,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leaflet-auto-graticule@workspace:.":
+"leaflet-auto-graticule-options@workspace:.":
   version: 0.0.0-use.local
-  resolution: "leaflet-auto-graticule@workspace:."
+  resolution: "leaflet-auto-graticule-options@workspace:."
   dependencies:
     "@types/leaflet": "npm:^1.9.8"
     "@types/node": "npm:^22.10.1"

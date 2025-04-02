@@ -1,7 +1,7 @@
 {
-  "name": "leaflet-auto-graticule",
+  "name": "leaflet-auto-graticule-options",
   "version": "2.0.0",
-  "description": "Leaflet graticule with automatic adaption to zoom level.",
+  "description": "Leaflet graticule with automatic adaption to zoom level. Now with more options.",
   "type": "module",
   "main": "./dist/L.AutoGraticule.js",
   "types": "./dist/L.AutoGraticule.d.ts",

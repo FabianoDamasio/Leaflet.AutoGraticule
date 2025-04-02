@@ -24,7 +24,7 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			'leaflet-auto-graticule': './src/L.AutoGraticule.ts'
+			'leaflet-auto-graticule-options': './src/L.AutoGraticule.ts'
 		}
 	},
 	test: {

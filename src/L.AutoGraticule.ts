@@ -5,22 +5,24 @@ export interface AutoGraticuleOptions extends LayerOptions {
     redraw: keyof LeafletEventHandlerFnMap,
 
     /** Minimum distance between two lines in pixels */
-    minDistance: number
+    minDistance: number,
+    lineStyle: PolylineOptions,
+    className: string
 }
 
 export default class AutoGraticule extends LayerGroup {
 
     options: AutoGraticuleOptions = {
         redraw: 'moveend',
-        minDistance: 100 // Minimum distance between two lines in pixels
-    };
-
-    lineStyle: PolylineOptions = {
-        stroke: true,
-        color: '#111',
-        opacity: 0.6,
-        weight: 1,
-        interactive: false
+        minDistance: 100, // Minimum distance between two lines in pixels
+        lineStyle: {
+            stroke: true,
+            color: '#111',
+            opacity: 0.6,
+            weight: 1,
+            interactive: false
+        },
+        className: ''
     };
 
     _bounds!: LatLngBounds;
@@ -129,14 +131,14 @@ export default class AutoGraticule extends LayerGroup {
         const bottomLL = new LatLng(this._bounds.getSouth(), x);
         const topLL = new LatLng(this._bounds.getNorth(), x);
 
-        return new Polyline([bottomLL, topLL], this.lineStyle);
+        return new Polyline([bottomLL, topLL], this.options.lineStyle);
     }
 
     buildYLine(y: number): L.Polyline {
         const leftLL = new LatLng(y, this._bounds.getWest());
         const rightLL = new LatLng(y, this._bounds.getEast());
 
-        return new Polyline([leftLL, rightLL], this.lineStyle);
+        return new Polyline([leftLL, rightLL], this.options.lineStyle);
     }
 
     buildLabel(axis: 'gridlabel-horiz' | 'gridlabel-vert', val: number) {
@@ -152,7 +154,7 @@ export default class AutoGraticule extends LayerGroup {
             interactive: false,
             icon: divIcon({
                 iconSize: [0, 0],
-                className: 'leaflet-grid-label',
+                className: `leaflet-grid-label ${this.options.className}`,
                 html: '<div class="' + axis + '">' + val + '&#8239;°</div>'
             })
         });
